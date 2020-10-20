@@ -1,14 +1,18 @@
 #include <string>
 #include "Empregado.hpp"
+#include "Vendedor.hpp"
+#define MESES 12
 
-class Vendedor : public Empregado {
+double Vendedor::getQuotaTotalAnual() {
+	return getQuotaMensalVendas() * MESES;
+}
 
-  public:
-    std::string nome;  	  
-	
-	double quotaTotalAnual() {
-	  return quotaMensalVendas * 12;
-	}
-	
-};
+std::string Vendedor::getNome() {
+	return nome;
+}
+
+void Vendedor::setNome(std::string _nome) {
+	nome = _nome;
+}
+
 
